@@ -57,4 +57,31 @@ output_data = []
 for output in outputs:
     output_data.append(label2idx[output])
 
-print(output_data)
+output_data = to_categorical(output_data, len(labels))
+
+model = Sequential()
+model.add(LSTM(128))
+model.add(Dense(len(labels), activation='softmax'))
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
+
+model.fit(input_data, output_data, epochs=256)
+
+# Classify any given text into a category of NLU franmework
+
+def classify(text):
+
+    x=np.zeros((1, max_sent, 256), dtype='float32')
+
+    # Fill x array with dat from input text
+    for k, ch in enumerate(bytes(text.encode('utf-8'))):
+        x [0, k, int(ch)] = 1.0
+
+    out = model.predict(x)
+    idx = out.argmax()
+
+    print ('Text: "{}" is classified as "{}"'.format(text, idx2label[idx]))
+
+while True:
+    text = input('Enter some text:')
+    classify(text)
