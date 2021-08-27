@@ -9,7 +9,20 @@ import queue
 import sounddevice as sd
 import vosk
 import sys
+import pyttsx3
+import json
+from core import SystemInfo
 
+# Speech Synthesis
+engine = pyttsx3.init()
+
+def speak(text): 
+    engine.say(text)
+    engine.runAndWait()
+
+voices = engine.getProperty('voices')
+
+#Speech Recognition
 q = queue.Queue()
 
 def int_or_str(text):
@@ -79,7 +92,18 @@ try:
             while True:
                 data = q.get()
                 if rec.AcceptWaveform(data):
-                    print(rec.Result())
+                    # result is a string
+                    result = (rec.Result())
+                    #convert it to json
+                    result = json.loads(result)
+                    text = result['text']
+
+                    print(result['text'])
+
+                    if text == 'luna what time is it' or text == 'luna tell me the time' or text == 'luna tell me that time':
+                        speak(SystemInfo.get_time())
+                    if text == 'luna how are you today' or text == 'luna how are you':
+                        speak('I feel fine today, father')
                 if dump_fn is not None:
                     dump_fn.write(data)
 
