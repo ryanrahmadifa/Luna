@@ -103,6 +103,21 @@ try:
 
                     if text == 'luna what time is it' or text == 'luna tell me the time' or text == 'luna tell me that time':
                         speak(SystemInfo.get_time())
+                    if text == 'luna open edge' or text == 'luna open microsoft edge':
+                        speak('okay, opening microsoft edge')
+                        os.system('"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"') 
+                    if text == 'luna open line':
+                        speak('okay, opening line')
+                        os.system('"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"') 
+                    if text == 'luna open spotify' or text == 'luna open a spotify':
+                        speak('okay, opening spotify')
+                        os.system('"C:\\Users\\mryan\\AppData\\Roaming\\Spotify\\Spotify.exe"')
+                    if text == 'luna open discord' or text == 'luna open a discord':
+                        speak('okay, opening discord')
+                        os.system('"C:\\Users\\mryan\\AppData\\Local\\Discord\\Update2.exe --processStart Discord.exe"')
+                    if text == 'luna close edge' or text == 'luna close a edge':
+                        speak('okay, closing microsoft edge')
+                        os.system("TASKKILL /F /IM msedge.exe") 
                     if text == 'luna how are you today' or text == 'luna how are you':
                         speak('I feel fine today, father')
                     if text == 'luna say hi to mom' or text == 'luna say hi to month':
