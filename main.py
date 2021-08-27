@@ -21,6 +21,7 @@ def speak(text):
     engine.runAndWait()
 
 voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)
 
 #Speech Recognition
 q = queue.Queue()
@@ -104,6 +105,8 @@ try:
                         speak(SystemInfo.get_time())
                     if text == 'luna how are you today' or text == 'luna how are you':
                         speak('I feel fine today, father')
+                    if text == 'luna say hi to mom' or text == 'luna say hi to month':
+                        speak('Hello mother')
                 if dump_fn is not None:
                     dump_fn.write(data)
 

@@ -1,0 +1,28 @@
+commands:
+  #Time commands
+  - command:
+    input: Luna, what time is it?
+    entity: time
+    action: getTime
+  - command:
+    input: Luna, tell me the time
+    entity: time
+    action: getTime    
+  # Weather commands
+  - command:
+    input: Luna, tell me the weather
+    entity: time
+    action: getWeather
+  - command:
+    input: Luna, how is the weather?
+    entity: time
+    action: getWeather
+  # Open application commands
+  - command:
+    input: open see x
+    entity: open
+    action: getSIX
+  - command:
+    input: open a do next
+    entity: open
+    action: getEDUNEX
