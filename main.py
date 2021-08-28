@@ -84,7 +84,7 @@ try:
     else:
         dump_fn = None
 
-    with sd.RawInputStream(samplerate=args.samplerate, blocksize = 8000, device=args.device, dtype='int16',
+    with sd.RawInputStream(samplerate=args.samplerate, blocksize = 16000, device=args.device, dtype='int16',
                             channels=1, callback=callback):
             print('#' * 80)
             print('Press Ctrl+C to stop the recording')
@@ -128,9 +128,12 @@ try:
                     if text == 'luna open teams' or text == 'luna open a teams':
                         speak('okay, opening microsoft teams')
                         os.system('"C:\\Users\\mryan\\AppData\\Local\\Microsoft\\Teams\\Update.exe --processStart "Teams.exe""')
-                    if text == 'luna open one drive' or text == 'luna open want drive' or text == 'luna open one dry':
+                    if text == 'luna open one drive' or text == 'luna open want drive' or text == 'who do not open one drive':
                         speak('okay, opening microsoft one drive')
                         os.system('"C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe"')
+                    if text == 'luna open play list ' or text == 'luna open playlist':
+                        speak('okay, opening spotify')
+                        webbrowser.open_new('https://open.spotify.com/playlist/0Cn8526CF48hDmLUF2rfvZ')
 
                     # Open websites as a new tab
 
@@ -143,7 +146,7 @@ try:
                     if text == 'luna open i do next' or text == 'luna open and do next' or text == 'luna open a do next':
                         speak('okay, opening and do next')
                         webbrowser.open_new('https://edunex.itb.ac.id')
-                    if text == 'luna open see x' or text == 'luna open sea acts' or text == 'luna open sea x' or text == 'luna open sea eggs' or text == 'luna oh can see x':
+                    if text == 'luna open see x' or text == 'luna open sea acts' or text == 'luna open sea x' or text == 'luna open sea eggs' or text == 'luna oh can see x' or text == 'who do not open sea x':
                         speak('okay, opening see x')
                         webbrowser.open_new('https://akademik.itb.ac.id')
                     if text == 'luna open trading view' or text == 'luna open trade and view':
@@ -155,6 +158,12 @@ try:
                     if text == 'luna open twitch':
                         speak('okay, opening twitch')
                         webbrowser.open_new('https://twitch.tv/')
+                    if text == 'luna openly january' or text == 'luna open dictionary' or text == 'when i opened dictionary':
+                        speak('okay, opening dictionary')
+                        webbrowser.open_new('https://www.merriam-webster.com/')
+                    if text == 'luna open can be be' or text == 'who now open can be be':
+                        speak('okay, opening dictionary')
+                        webbrowser.open_new('https://kbbi.web.id/')
 
                     # Closing applications
 
@@ -170,6 +179,12 @@ try:
                     if text == 'luna close edge' or text == 'luna close a edge':
                         speak('okay, closing microsoft edge')
                         os.system("TASKKILL /F /IM msedge.exe") 
+                    if text == 'luna go to sleep' or text == 'luna go sleep':
+                        speak('okay, laptop will be going to sleep mode')
+                        os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
+                    if text == 'luna shut down' or text == 'luna go shut down':
+                        speak('okay, shutting down the laptop')
+                        os.system('shutdown -s -t 0')
                 if dump_fn is not None:
                     dump_fn.write(data)
 
