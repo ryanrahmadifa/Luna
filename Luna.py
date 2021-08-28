@@ -110,59 +110,68 @@ try:
                         speak('youre welcome')
                     if text == 'good morning luna' or text == 'morning luna':
                         speak('morning ryan')
+                    if text == 'luna clear' or text == 'luna clean' or text == 'luna refresh':
+                        speak('clearing memory')
+                        os.system('cls')
 
                     # Running applications
 
                     if text == 'luna open edge' or text == 'luna open microsoft edge':
-                        speak('okay, opening microsoft edge')
+                        speak('opening microsoft edge')
                         os.system('"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"') 
                     if text == 'luna open line':
-                        speak('okay, opening line')
+                        speak('opening line')
                         os.system('"C:\\Users\\mryan\\AppData\\Local\LINE\\bin\\current\\LINE.exe"') 
                     if text == 'luna open spotify' or text == 'luna open a spotify':
-                        speak('okay, opening spot a fy')
+                        speak('opening spot a fy')
                         os.system('"C:\\Users\\mryan\\AppData\\Roaming\\Spotify\\Spotify.exe"')
                     if text == 'luna open discord' or text == 'luna open a discord':
-                        speak('okay, opening discord')
+                        speak('opening discord')
                         os.system('"C:\\Users\\mryan\\AppData\\Local\\Discord\\Update2.exe --processStart Discord.exe"')
                     if text == 'luna open teams' or text == 'luna open a teams':
-                        speak('okay, opening microsoft teams')
+                        speak('opening microsoft teams')
                         os.system('"C:\\Users\\mryan\\AppData\\Local\\Microsoft\\Teams\\Update.exe --processStart "Teams.exe""')
                     if text == 'luna open one drive' or text == 'luna open want drive' or text == 'who do not open one drive':
-                        speak('okay, opening microsoft one drive')
+                        speak('opening microsoft one drive')
                         os.system('"C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe"')
                     if text == 'luna open play list ' or text == 'luna open playlist':
-                        speak('okay, opening spotify')
+                        speak('opening spot a fy')
                         webbrowser.open_new('https://open.spotify.com/playlist/0Cn8526CF48hDmLUF2rfvZ')
+                    if text == "luna open what's up" or text == "when i open what's up" or text == "when i opened what's app":
+                        speak('opening whats app')
+                        os.system('"C:\\Users\\mryan\\AppData\\Local\\WhatsApp\\WhatsApp.exe"')
+                    if text == 'luna open notepad' or text == 'luna open not bad':
+                        speak('opening note pad')
+                        os.system('"%windir%\\system32\\notepad.exe"')
 
                     # Open websites as a new tab
 
                     if text == 'luna open google':
-                        speak('okay, opening google')
+                        speak('opening google')
                         webbrowser.open_new('http://www.google.com')
                     if text == 'luna open here too' or text == 'luna open you tube' or text == 'luna open you too':
-                        speak('okay, opening you tube')
+                        speak('opening you tube')
                         webbrowser.open_new('http://www.youtube.com')
                     if text == 'luna open i do next' or text == 'luna open and do next' or text == 'luna open a do next':
-                        speak('okay, opening and do next')
+                        speak('opening and do next')
                         webbrowser.open_new('https://edunex.itb.ac.id')
                     if text == 'luna open see x' or text == 'luna open sea acts' or text == 'luna open sea x' or text == 'luna open sea eggs' or text == 'luna oh can see x' or text == 'who do not open sea x':
-                        speak('okay, opening see x')
+                        speak('opening see x')
                         webbrowser.open_new('https://akademik.itb.ac.id')
                     if text == 'luna open trading view' or text == 'luna open trade and view':
-                        speak('okay, opening trading view')
+                        speak('opening trading view')
                         webbrowser.open_new('https://www.tradingview.com/chart/')
                     if text == 'luna open email' or text == 'luna open de mayo':
-                        speak('okay, opening gee mail')
+                        speak('opening gee mail')
                         webbrowser.open_new('https://mail.google.com/mail/u/1/#inbox')
                     if text == 'luna open twitch':
-                        speak('okay, opening twitch')
+                        speak('opening twitch')
                         webbrowser.open_new('https://twitch.tv/')
                     if text == 'luna openly january' or text == 'luna open dictionary' or text == 'when i opened dictionary':
-                        speak('okay, opening dictionary')
+                        speak('opening dictionary')
                         webbrowser.open_new('https://www.merriam-webster.com/')
                     if text == 'luna open can be be' or text == 'who now open can be be':
-                        speak('okay, opening dictionary')
+                        speak('opening dictionary')
                         webbrowser.open_new('https://kbbi.web.id/')
 
                     # Closing applications
@@ -176,6 +185,9 @@ try:
                     if text == 'luna close line' or text == 'luna clothes line':
                         speak('okay, closing line')
                         os.system("TASKKILL /F /IM LINE.exe") 
+                    if text == "luna close what's up" or text == "luna close what's app":
+                        speak('okay, closing whats app')
+                        os.system("TASKKILL /F /IM WhatsApp.exe") 
                     if text == 'luna close edge' or text == 'luna close a edge':
                         speak('okay, closing microsoft edge')
                         os.system("TASKKILL /F /IM msedge.exe") 
