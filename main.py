@@ -11,6 +11,7 @@ import vosk
 import sys
 import pyttsx3
 import json
+import webbrowser
 from core import SystemInfo
 
 # Speech Synthesis
@@ -102,10 +103,16 @@ try:
                     print(result['text'])
 
                     # Basic conversations
+                    
                     if text == 'luna what time is it' or text == 'luna tell me the time' or text == 'luna tell me that time':
                         speak(SystemInfo.get_time())
-                    
+                    if text == 'thank you luna' or text == 'good job luna' or text == 'thanks luna':
+                        speak('youre welcome')
+                    if text == 'good morning luna' or text == 'morning luna':
+                        speak('morning ryan')
+
                     # Running applications
+
                     if text == 'luna open edge' or text == 'luna open microsoft edge':
                         speak('okay, opening microsoft edge')
                         os.system('"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"') 
@@ -125,7 +132,32 @@ try:
                         speak('okay, opening microsoft one drive')
                         os.system('"C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe"')
 
+                    # Open websites as a new tab
+
+                    if text == 'luna open google':
+                        speak('okay, opening google')
+                        webbrowser.open_new('http://www.google.com')
+                    if text == 'luna open here too' or text == 'luna open you tube' or text == 'luna open you too':
+                        speak('okay, opening you tube')
+                        webbrowser.open_new('http://www.youtube.com')
+                    if text == 'luna open i do next' or text == 'luna open and do next' or text == 'luna open a do next':
+                        speak('okay, opening and do next')
+                        webbrowser.open_new('https://edunex.itb.ac.id')
+                    if text == 'luna open see x' or text == 'luna open sea acts' or text == 'luna open sea x' or text == 'luna open sea eggs' or text == 'luna oh can see x':
+                        speak('okay, opening see x')
+                        webbrowser.open_new('https://akademik.itb.ac.id')
+                    if text == 'luna open trading view' or text == 'luna open trade and view':
+                        speak('okay, opening trading view')
+                        webbrowser.open_new('https://www.tradingview.com/chart/')
+                    if text == 'luna open email' or text == 'luna open de mayo':
+                        speak('okay, opening gee mail')
+                        webbrowser.open_new('https://mail.google.com/mail/u/1/#inbox')
+                    if text == 'luna open twitch':
+                        speak('okay, opening twitch')
+                        webbrowser.open_new('https://twitch.tv/')
+
                     # Closing applications
+
                     if text == 'luna close teams' or text == 'luna close a teams':
                         speak('okay, closing microsoft teams')
                         os.system("TASKKILL /F /IM Teams.exe") 

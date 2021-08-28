@@ -1,0 +1,4 @@
+Run a spotify playlist on demand
+Search on google
+Shut the laptop down
+Set a reminder
