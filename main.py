@@ -101,27 +101,43 @@ try:
 
                     print(result['text'])
 
+                    # Basic conversations
                     if text == 'luna what time is it' or text == 'luna tell me the time' or text == 'luna tell me that time':
                         speak(SystemInfo.get_time())
+                    
+                    # Running applications
                     if text == 'luna open edge' or text == 'luna open microsoft edge':
                         speak('okay, opening microsoft edge')
                         os.system('"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"') 
                     if text == 'luna open line':
                         speak('okay, opening line')
-                        os.system('"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"') 
+                        os.system('"C:\\Users\\mryan\\AppData\\Local\LINE\\bin\\current\\LINE.exe"') 
                     if text == 'luna open spotify' or text == 'luna open a spotify':
-                        speak('okay, opening spotify')
+                        speak('okay, opening spot a fy')
                         os.system('"C:\\Users\\mryan\\AppData\\Roaming\\Spotify\\Spotify.exe"')
                     if text == 'luna open discord' or text == 'luna open a discord':
                         speak('okay, opening discord')
                         os.system('"C:\\Users\\mryan\\AppData\\Local\\Discord\\Update2.exe --processStart Discord.exe"')
+                    if text == 'luna open teams' or text == 'luna open a teams':
+                        speak('okay, opening microsoft teams')
+                        os.system('"C:\\Users\\mryan\\AppData\\Local\\Microsoft\\Teams\\Update.exe --processStart "Teams.exe""')
+                    if text == 'luna open one drive' or text == 'luna open want drive' or text == 'luna open one dry':
+                        speak('okay, opening microsoft one drive')
+                        os.system('"C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe"')
+
+                    # Closing applications
+                    if text == 'luna close teams' or text == 'luna close a teams':
+                        speak('okay, closing microsoft teams')
+                        os.system("TASKKILL /F /IM Teams.exe") 
+                    if text == 'luna close discord' or text == 'luna close a discord':
+                        speak('okay, closing discord')
+                        os.system("TASKKILL /F /IM Discord.exe") 
+                    if text == 'luna close line' or text == 'luna clothes line':
+                        speak('okay, closing line')
+                        os.system("TASKKILL /F /IM LINE.exe") 
                     if text == 'luna close edge' or text == 'luna close a edge':
                         speak('okay, closing microsoft edge')
                         os.system("TASKKILL /F /IM msedge.exe") 
-                    if text == 'luna how are you today' or text == 'luna how are you':
-                        speak('I feel fine today, father')
-                    if text == 'luna say hi to mom' or text == 'luna say hi to month':
-                        speak('Hello mother')
                 if dump_fn is not None:
                     dump_fn.write(data)
 
