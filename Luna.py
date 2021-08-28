@@ -117,62 +117,62 @@ try:
                     # Running applications
 
                     if text == 'luna open edge' or text == 'luna open microsoft edge':
-                        speak('opening microsoft edge')
                         os.system('"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"') 
+                        speak('opening microsoft edge')
                     if text == 'luna open line':
-                        speak('opening line')
-                        os.system('"C:\\Users\\mryan\\AppData\\Local\LINE\\bin\\current\\LINE.exe"') 
+                        os.system('"C:\\Users\\mryan\\AppData\\Local\LINE\\bin\\current\\LINE.exe"')
+                        speak('opening line') 
                     if text == 'luna open spotify' or text == 'luna open a spotify':
-                        speak('opening spot a fy')
                         os.system('"C:\\Users\\mryan\\AppData\\Roaming\\Spotify\\Spotify.exe"')
-                    if text == 'luna open discord' or text == 'luna open a discord':
-                        speak('opening discord')
-                        os.system('"C:\\Users\\mryan\\AppData\\Local\\Discord\\Update2.exe --processStart Discord.exe"')
-                    if text == 'luna open teams' or text == 'luna open a teams':
-                        speak('opening microsoft teams')
-                        os.system('"C:\\Users\\mryan\\AppData\\Local\\Microsoft\\Teams\\Update.exe --processStart "Teams.exe""')
-                    if text == 'luna open one drive' or text == 'luna open want drive' or text == 'who do not open one drive':
-                        speak('opening microsoft one drive')
-                        os.system('"C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe"')
-                    if text == 'luna open play list ' or text == 'luna open playlist':
                         speak('opening spot a fy')
+                    if text == 'luna open discord' or text == 'luna open a discord':
+                        os.system('"C:\\Users\\mryan\\AppData\\Local\\Discord\\Update2.exe --processStart Discord.exe"')
+                        speak('opening discord')
+                    if text == 'luna open teams' or text == 'luna open a teams':
+                        os.system('"C:\\Users\\mryan\\AppData\\Local\\Microsoft\\Teams\\Update.exe --processStart "Teams.exe""')
+                        speak('opening microsoft teams')
+                    if text == 'luna open one drive' or text == 'luna open want drive' or text == 'who do not open one drive':
+                        os.system('"C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe"')
+                        speak('opening microsoft one drive')
+                    if text == 'luna open play list ' or text == 'luna open playlist':
                         webbrowser.open_new('https://open.spotify.com/playlist/0Cn8526CF48hDmLUF2rfvZ')
+                        speak('opening spot a fy')
                     if text == "luna open what's up" or text == "when i open what's up" or text == "when i opened what's app":
-                        speak('opening whats app')
                         os.system('"C:\\Users\\mryan\\AppData\\Local\\WhatsApp\\WhatsApp.exe"')
+                        speak('opening whats app')
                     if text == 'luna open notepad' or text == 'luna open not bad':
-                        speak('opening note pad')
                         os.system('"%windir%\\system32\\notepad.exe"')
+                        speak('opening note pad')
 
                     # Open websites as a new tab
 
                     if text == 'luna open google':
-                        speak('opening google')
                         webbrowser.open_new('http://www.google.com')
+                        speak('opening google')
                     if text == 'luna open here too' or text == 'luna open you tube' or text == 'luna open you too':
-                        speak('opening you tube')
                         webbrowser.open_new('http://www.youtube.com')
+                        speak('opening you tube')
                     if text == 'luna open i do next' or text == 'luna open and do next' or text == 'luna open a do next':
-                        speak('opening and do next')
                         webbrowser.open_new('https://edunex.itb.ac.id')
+                        speak('opening and do next')
                     if text == 'luna open see x' or text == 'luna open sea acts' or text == 'luna open sea x' or text == 'luna open sea eggs' or text == 'luna oh can see x' or text == 'who do not open sea x':
-                        speak('opening see x')
                         webbrowser.open_new('https://akademik.itb.ac.id')
+                        speak('opening see x')
                     if text == 'luna open trading view' or text == 'luna open trade and view':
-                        speak('opening trading view')
                         webbrowser.open_new('https://www.tradingview.com/chart/')
+                        speak('opening trading view')
                     if text == 'luna open email' or text == 'luna open de mayo':
-                        speak('opening gee mail')
                         webbrowser.open_new('https://mail.google.com/mail/u/1/#inbox')
+                        speak('opening gee mail')
                     if text == 'luna open twitch':
-                        speak('opening twitch')
                         webbrowser.open_new('https://twitch.tv/')
+                        speak('opening twitch')
                     if text == 'luna openly january' or text == 'luna open dictionary' or text == 'when i opened dictionary':
-                        speak('opening dictionary')
                         webbrowser.open_new('https://www.merriam-webster.com/')
-                    if text == 'luna open can be be' or text == 'who now open can be be':
                         speak('opening dictionary')
+                    if text == 'luna open can be be' or text == 'who now open can be be':
                         webbrowser.open_new('https://kbbi.web.id/')
+                        speak('opening dictionary')
 
                     # Closing applications
 
