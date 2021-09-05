@@ -12,6 +12,7 @@ import sys
 import pyttsx3
 import json
 import webbrowser
+import schedule
 from core import SystemInfo
 
 # Speech Synthesis
@@ -134,9 +135,6 @@ try:
                     if text == 'luna open one drive' or text == 'luna open want drive' or text == 'who do not open one drive':
                         os.system('"C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe"')
                         speak('opening microsoft one drive')
-                    if text == 'luna open play list ' or text == 'luna open playlist':
-                        webbrowser.open_new('https://open.spotify.com/playlist/0Cn8526CF48hDmLUF2rfvZ')
-                        speak('opening spot a fy')
                     if text == "luna open what's up" or text == "when i open what's up" or text == "when i opened what's app":
                         os.system('"C:\\Users\\mryan\\AppData\\Local\\WhatsApp\\WhatsApp.exe"')
                         speak('opening whats app')
@@ -155,8 +153,8 @@ try:
                     if text == 'luna open i do next' or text == 'luna open and do next' or text == 'luna open a do next':
                         webbrowser.open_new('https://edunex.itb.ac.id')
                         speak('opening and do next')
-                    if text == 'luna open see x' or text == 'luna open sea acts' or text == 'luna open sea x' or text == 'luna open sea eggs' or text == 'luna oh can see x' or text == 'who do not open sea x':
-                        webbrowser.open_new('https://akademik.itb.ac.id')
+                    if text == 'luna open see x' or text == 'luna open sea acts' or text == 'luna open sea x' or text == 'luna open sea eggs' or text == 'luna oh can see x' or text == 'luna open six':
+                        webbrowser.open_new('https://akademik.itb.ac.id/app/K/mahasiswa:16721425+2021-1/kelas/jadwal/mahasiswa')
                         speak('opening see x')
                     if text == 'luna open trading view' or text == 'luna open trade and view':
                         webbrowser.open_new('https://www.tradingview.com/chart/')
@@ -173,6 +171,30 @@ try:
                     if text == 'luna open can be be' or text == 'who now open can be be':
                         webbrowser.open_new('https://kbbi.web.id/')
                         speak('opening dictionary')
+                    if text == 'luna open instagram':
+                        webbrowser.open_new('https://www.instagram.com/')
+                        speak('opening instagram')
+                    if text == 'luna open market' or text == 'luna open online shop':
+                        webbrowser.open_new('https://www.tokopedia.com/')
+                        speak('opening online shop')
+                    if text == 'luna open link and' or text == 'luna open link in' or text == 'luna open linked in' or text == 'luna open linked then' or text == 'luna open link then' or text == 'luna open linked him':
+                        webbrowser.open_new('https://www.linkedin.com/in/ryan-rahmadifa-b04486219/')
+                        speak('opening linked in')
+                    if text == 'luna open calculator' or text == 'luna open well from' or text == 'luna open wolfram' or text == 'luna open while from':
+                        webbrowser.open_new('https://www.wolframalpha.com/')
+                        speak('opening wolf ram alpha')
+                    if text == 'luna open rep playlist' or text == 'luna open rap playlist':
+                        webbrowser.open_new('https://open.spotify.com/playlist/01QJEaau6MD8AZBx8Gq0ZN/')
+                        speak('opening spot a fy')
+                    if text == 'luna open lo fi playlist' or text == 'luna open a lofi playlist':
+                        webbrowser.open_new('https://open.spotify.com/playlist/62avPAI9LV5bRRAaMUPgAF/')
+                        speak('opening spot a fy')
+                    if text == 'luna open life playlist' or text == 'luna open soundtrack playlist':
+                        webbrowser.open_new('https://open.spotify.com/playlist/2qFazgtuYfWyjb3rRIU1tU/')
+                        speak('opening spot a fy')
+                    if text == 'luna open enemy playlist' or text == 'luna open annie may playlist':
+                        webbrowser.open_new('https://open.spotify.com/playlist/0Cn8526CF48hDmLUF2rfvZ/')
+                        speak('opening spot a fy')
 
                     # Closing applications
 
