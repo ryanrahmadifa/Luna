@@ -12,7 +12,6 @@ import sys
 import pyttsx3
 import json
 import webbrowser
-import schedule
 from core import SystemInfo
 
 # Speech Synthesis
@@ -197,7 +196,7 @@ try:
                         speak('opening spot a fy')
 
                     # Closing applications
-
+                    
                     if text == 'luna close teams' or text == 'luna close a teams':
                         speak('okay, closing microsoft teams')
                         os.system("TASKKILL /F /IM Teams.exe") 
