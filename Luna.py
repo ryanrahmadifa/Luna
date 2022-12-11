@@ -13,9 +13,13 @@ import pyttsx3
 import json
 import webbrowser
 from core import SystemInfo
+import openai
+import certifi
+certifi.where()
 
 # Speech Synthesis
 engine = pyttsx3.init()
+openai.api_key = "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"
 
 def speak(text): 
     engine.say(text)
@@ -39,6 +43,18 @@ def callback(indata, frames, time, status):
     if status:
         print(status, file=sys.stderr)
     q.put(bytes(indata))
+
+def answer_question(question):
+  response = openai.Completion.create(
+    engine="text-davinci-003",
+    prompt=question,
+    max_tokens=100,
+    n=1,
+    temperature=0.1
+  )
+
+  return response["choices"][0]["text"]
+
 
 parser = argparse.ArgumentParser(add_help=False)
 parser.add_argument(
@@ -107,7 +123,7 @@ try:
                     if text == 'luna what time is it' or text == 'luna tell me the time' or text == 'luna tell me that time':
                         speak(SystemInfo.get_time())
                     if text == 'thank you luna' or text == 'good job luna' or text == 'thanks luna':
-                        speak('youre welcome')
+                        speak("you're welcome")
                     if text == 'good morning luna' or text == 'morning luna':
                         speak('morning ryan')
                     if text == 'luna clear' or text == 'luna clean' or text == 'luna refresh':
@@ -134,16 +150,14 @@ try:
                     if text == 'luna open one drive' or text == 'luna open want drive' or text == 'who do not open one drive':
                         os.system('"C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe"')
                         speak('opening microsoft one drive')
-                    if text == "luna open what's up" or text == "when i open what's up" or text == "when i opened what's app":
-                        os.system('"C:\\Users\\mryan\\AppData\\Local\\WhatsApp\\WhatsApp.exe"')
-                        speak('opening whats app')
                     if text == 'luna open notepad' or text == 'luna open not bad':
                         os.system('"%windir%\\system32\\notepad.exe"')
                         speak('opening note pad')
 
                     # Open websites as a new tab
-
-                    if text == 'luna open google':
+                    if 'hey luna' in text:
+                        speak('yes, ryan?')
+                    if 'luna google' in text:
                         webbrowser.open_new('http://www.google.com')
                         speak('opening google')
                     if text == 'luna open here too' or text == 'luna open you tube' or text == 'luna open you too':
@@ -153,7 +167,7 @@ try:
                         webbrowser.open_new('https://edunex.itb.ac.id')
                         speak('opening and do next')
                     if text == 'luna open see x' or text == 'luna open sea acts' or text == 'luna open sea x' or text == 'luna open sea eggs' or text == 'luna oh can see x' or text == 'luna open six':
-                        webbrowser.open_new('https://akademik.itb.ac.id/app/K/mahasiswa:16721425+2021-1/kelas/jadwal/mahasiswa')
+                        webbrowser.open_new('https://akademik.itb.ac.id/app/K/mahasiswa:13421146+2022-1/kelas/jadwal/mahasiswa')
                         speak('opening see x')
                     if text == 'luna open trading view' or text == 'luna open trade and view':
                         webbrowser.open_new('https://www.tradingview.com/chart/')
@@ -161,7 +175,7 @@ try:
                     if text == 'luna open email' or text == 'luna open de mayo':
                         webbrowser.open_new('https://mail.google.com/mail/u/1/#inbox')
                         speak('opening gee mail')
-                    if text == 'luna open twitch':
+                    if text == 'luna open twitch' or text == 'the not open twitch' or text == 'luna open a twitch' or text == 'lunar open twitch' or text == 'no open twitch' or text =='buena open twitch':
                         webbrowser.open_new('https://twitch.tv/')
                         speak('opening twitch')
                     if text == 'luna openly january' or text == 'luna open dictionary' or text == 'when i opened dictionary':
@@ -176,8 +190,8 @@ try:
                     if text == 'luna open market' or text == 'luna open online shop':
                         webbrowser.open_new('https://www.tokopedia.com/')
                         speak('opening online shop')
-                    if text == 'luna open link and' or text == 'luna open link in' or text == 'luna open linked in' or text == 'luna open linked then' or text == 'luna open link then' or text == 'luna open linked him':
-                        webbrowser.open_new('https://www.linkedin.com/in/ryan-rahmadifa-b04486219/')
+                    if text == 'luna open link and' or text == 'luna open link in' or text == 'luna open linked in' or text == 'luna open linked then' or text == 'luna open link then' or text == 'luna open linked him' or text == 'luna open the link then' or text == 'luna open liked and' or text == 'luna open linked and' or text == 'luna open going in' or text == 'luna open like him':
+                        webbrowser.open_new('https://www.linkedin.com/in/m-ryan-rahmadifa/')
                         speak('opening linked in')
                     if text == 'luna open calculator' or text == 'luna open well from' or text == 'luna open wolfram' or text == 'luna open while from':
                         webbrowser.open_new('https://www.wolframalpha.com/')
@@ -194,7 +208,12 @@ try:
                     if text == 'luna open enemy playlist' or text == 'luna open annie may playlist':
                         webbrowser.open_new('https://open.spotify.com/playlist/0Cn8526CF48hDmLUF2rfvZ/')
                         speak('opening spot a fy')
-
+                    if text == "luna open what's up" or text == "when i open what's up" or text == "when i opened what's app" or text == "you know what's up" or text == "luna open what's app":
+                        webbrowser.open_new('https://web.whatsapp.com/')
+                        speak('opening whats app')
+                    if text == 'luna open google dry' or text == 'luna often google drive' or text == 'luna open google drive':
+                        webbrowser.open_new('https://drive.google.com/drive/u/0/my-drive')
+                        speak('opening google drive')
                     # Closing applications
                     
                     if text == 'luna close teams' or text == 'luna close a teams':
@@ -218,6 +237,19 @@ try:
                     if text == 'luna shut down' or text == 'luna go shut down':
                         speak('okay, shutting down the laptop')
                         os.system('shutdown -s -t 0')
+                    if 'question' in text:
+                        answer = answer_question(text)
+                        speak(answer)
+                        print(answer)
+                    if 'write' in text:
+                        speak('okay, waiting')
+                        query = input()
+                        answer = answer_question(query)
+                        speak(answer)
+                        print(answer)
+                        
+
+
                 if dump_fn is not None:
                     dump_fn.write(data)
 
